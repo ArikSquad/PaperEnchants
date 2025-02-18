@@ -1,0 +1,7 @@
+name: paperenchants
+version: '1.0-SNAPSHOT'
+main: eu.mikart.paperenchant.paperenchants.EnchantsPlugin
+bootstrapper: eu.mikart.paperenchant.paperenchants.EnchantsBootstrap
+api-version: '1.21'
+authors: [ AriDev ]
+description: A enchantment plugin POC for myself
