@@ -14,12 +14,12 @@ public class EnchantsBootstrap implements PluginBootstrap {
 
     @Override
     public void bootstrap(BootstrapContext context) {
-        // Register a new handler for the freeze lifecycle event on the enchantment registry
+        context.getLogger().info("PaperEnchants bootstrapper is running.");
         context.getLifecycleManager().registerEventHandler(RegistryEvents.ENCHANTMENT.freeze().newHandler(event -> {
-            // Get all custom enchantments from the EnchantManager
             for (CustomEnchant enchant : EnchantManager.getInstance().getEnchants()) {
+				context.getLogger().info("Registering enchantment: {}", enchant.getId());
                 event.registry().register(
-                        EnchantmentKeys.create(Key.key("minecraft", enchant.getId())),
+                        EnchantmentKeys.create(Key.key("paperenchants", enchant.getId())),
                         b -> b.description(enchant.getName())
                                 .supportedItems(event.getOrCreateTag(enchant.getTagKey()))
                                 .anvilCost(enchant.getWeight())
