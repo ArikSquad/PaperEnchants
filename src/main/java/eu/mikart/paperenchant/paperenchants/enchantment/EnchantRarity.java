@@ -1,5 +1,5 @@
 package eu.mikart.paperenchant.paperenchants.enchantment;
 
 public enum EnchantRarity {
-    BASIC, RARE
+    COMMON, UNCOMMON, RARE, VERY_RARE
 }
